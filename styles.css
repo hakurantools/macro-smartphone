@@ -1,24 +1,27 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7; /* 背景色：薄い灰色 */
+    background-color: #f9f9f9; /* 背景色をさらに明るく */
     color: #333333; /* 文字色：濃い灰色 */
     margin: 0;
     padding: 20px;
+    line-height: 1.6; /* 読みやすさのための行間調整 */
 }
 
 .container {
-    max-width: 500px;
+    max-width: 600px; /* コンテナ幅を広げ、長文対応 */
     margin: auto;
     padding: 20px;
     background: #ffffff; /* コンテナ：白 */
-    border: 1px solid #dddddd; /* 薄いグレーの枠線 */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* ソフトな影 */
+    border: 1px solid #e0e0e0; /* 薄いグレーの枠線 */
+    border-radius: 10px; /* 丸みを少し強調 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* より目立たない影 */
 }
 
 h1 {
     text-align: center;
-    color: #555555; /* タイトル：落ち着いたグレー */
+    font-size: 1.8em; /* サイズ調整で視認性向上 */
+    color: #444444; /* タイトル：少し濃いグレー */
+    margin-bottom: 20px;
 }
 
 form {
@@ -29,41 +32,47 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #666666; /* ラベル：淡いグレー */
+    color: #555555; /* ラベル色を若干濃く */
 }
 
 input, select, button {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #cccccc; /* 入力欄：淡いグレー */
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: #f9f9f9; /* 入力背景：ほぼ白 */
+    padding: 12px; /* 入力欄とボタンの高さを統一 */
+    margin-bottom: 12px; /* 項目間の余白を調整 */
+    border: 1px solid #dcdcdc; /* 入力欄：淡い枠線 */
+    border-radius: 6px; /* 丸みを少し追加 */
+    font-size: 15px; /* 標準的なフォントサイズ */
+    background-color: #fefefe; /* 入力背景：完全な白に近い */
     color: #333333; /* 入力文字：濃い灰色 */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus, select:focus, button:focus {
     outline: none;
     border-color: #888888; /* フォーカス時：中間グレー */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); /* フォーカス時に少し立体感 */
 }
 
 button {
-    background-color: #e0e0e0; /* ボタン：薄い灰色 */
+    background-color: #f1f1f1; /* ボタン：もう少し明るい灰色 */
     color: #333333; /* ボタン文字：濃い灰色 */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
-    background-color: #d6d6d6; /* ホバー時：少し濃い灰色 */
+    background-color: #e2e2e2; /* ホバー時：薄い灰色 */
+    color: #000000; /* ボタン文字：黒に近い色 */
 }
 
 pre {
-    background: #f4f4f4; /* プレビュー背景：淡いグレー */
-    padding: 10px;
-    border: 1px solid #dddddd; /* プレビュー枠線：薄いグレー */
-    border-radius: 4px;
+    background: #f6f6f6; /* プレビュー背景：明るいグレー */
+    padding: 12px;
+    border: 1px solid #e0e0e0; /* プレビュー枠線：薄いグレー */
+    border-radius: 6px; /* 丸み追加 */
     overflow-x: auto;
-    color: #444444; /* プレビュー文字：落ち着いた灰色 */
+    font-size: 14px; /* プレビュー文字サイズ調整 */
+    color: #333333; /* プレビュー文字：濃い灰色 */
+    line-height: 1.4; /* 行間調整 */
 }
