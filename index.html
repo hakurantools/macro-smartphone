@@ -3,41 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高性能マクロ生成ツール</title>
+    <title>簡単マクロ生成ツール</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>📱 高性能マクロ生成ツール</h1>
+        <h1>📱 簡単マクロ生成ツール</h1>
         <form id="macro-form">
-            <div class="form-group">
-                <label for="action-type">操作タイプ:</label>
-                <select id="action-type">
-                    <option value="click">クリック</option>
-                    <option value="type">文字入力</option>
-                    <option value="wait">待機</option>
-                </select>
-            </div>
-            <div class="form-group" id="coordinates-group">
+            <label for="action-type">操作タイプ:</label>
+            <select id="action-type">
+                <option value="click">タップ</option>
+                <option value="type">文字入力</option>
+                <option value="wait">待機</option>
+            </select>
+            
+            <div id="click-options" class="option-group">
                 <label for="x-coordinate">X座標:</label>
                 <input type="number" id="x-coordinate" placeholder="例: 100">
                 <label for="y-coordinate">Y座標:</label>
                 <input type="number" id="y-coordinate" placeholder="例: 200">
             </div>
-            <div class="form-group" id="text-group" style="display:none;">
-                <label for="text-input">入力するテキスト:</label>
-                <input type="text" id="text-input" placeholder="例: こんにちは！">
+
+            <div id="type-options" class="option-group" style="display: none;">
+                <label for="text-input">入力テキスト:</label>
+                <input type="text" id="text-input" placeholder="例: こんにちは">
             </div>
-            <div class="form-group" id="wait-group" style="display:none;">
+
+            <div id="wait-options" class="option-group" style="display: none;">
                 <label for="wait-time">待機時間 (秒):</label>
                 <input type="number" id="wait-time" placeholder="例: 2">
             </div>
+
             <button type="button" id="add-action">操作を追加</button>
         </form>
-        <div id="macro-preview">
-            <h2>マクロプレビュー:</h2>
-            <pre id="macro-output">[]</pre>
-        </div>
+        
+        <h2>マクロプレビュー:</h2>
+        <pre id="macro-output">[]</pre>
         <button id="download-macro">JSONをダウンロード</button>
     </div>
     <script src="script.js"></script>
