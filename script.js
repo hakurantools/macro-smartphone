@@ -1,37 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const macroForm = document.getElementById("macro-form");
     const actionType = document.getElementById("action-type");
-    const coordinatesGroup = document.getElementById("coordinates-group");
-    const textGroup = document.getElementById("text-group");
-    const waitGroup = document.getElementById("wait-group");
+    const clickOptions = document.getElementById("click-options");
+    const typeOptions = document.getElementById("type-options");
+    const waitOptions = document.getElementById("wait-options");
     const macroOutput = document.getElementById("macro-output");
+    const addActionButton = document.getElementById("add-action");
     const downloadButton = document.getElementById("download-macro");
 
     let actions = [];
 
+    // アクションタイプに応じてフォームを切り替える
     actionType.addEventListener("change", () => {
-        const value = actionType.value;
-        coordinatesGroup.style.display = value === "click" ? "block" : "none";
-        textGroup.style.display = value === "type" ? "block" : "none";
-        waitGroup.style.display = value === "wait" ? "block" : "none";
+        clickOptions.style.display = "none";
+        typeOptions.style.display = "none";
+        waitOptions.style.display = "none";
+
+        if (actionType.value === "click") clickOptions.style.display = "block";
+        if (actionType.value === "type") typeOptions.style.display = "block";
+        if (actionType.value === "wait") waitOptions.style.display = "block";
     });
 
-    document.getElementById("add-action").addEventListener("click", () => {
-        const action = { type: actionType.value };
+    // アクションを追加
+    addActionButton.addEventListener("click", () => {
+        let action = { type: actionType.value };
 
         if (action.type === "click") {
-            action.x = parseInt(document.getElementById("x-coordinate").value);
-            action.y = parseInt(document.getElementById("y-coordinate").value);
+            action.x = parseInt(document.getElementById("x-coordinate").value) || 0;
+            action.y = parseInt(document.getElementById("y-coordinate").value) || 0;
         } else if (action.type === "type") {
-            action.text = document.getElementById("text-input").value;
+            action.text = document.getElementById("text-input").value || "";
         } else if (action.type === "wait") {
-            action.seconds = parseInt(document.getElementById("wait-time").value);
+            action.seconds = parseInt(document.getElementById("wait-time").value) || 0;
         }
 
         actions.push(action);
         macroOutput.textContent = JSON.stringify(actions, null, 2);
     });
 
+    // JSONをダウンロード
     downloadButton.addEventListener("click", () => {
         const blob = new Blob([JSON.stringify(actions, null, 2)], { type: "application/json" });
         const url = URL.createObjectURL(blob);
