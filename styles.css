@@ -1,60 +1,69 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* 背景色：薄い灰色 */
+    color: #333333; /* 文字色：濃い灰色 */
     margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
 .container {
-    max-width: 600px;
-    margin: 50px auto;
+    max-width: 500px;
+    margin: auto;
     padding: 20px;
-    background: #1e1e1e;
+    background: #ffffff; /* コンテナ：白 */
+    border: 1px solid #dddddd; /* 薄いグレーの枠線 */
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* ソフトな影 */
 }
 
 h1 {
     text-align: center;
-    color: #00e676;
+    color: #555555; /* タイトル：落ち着いたグレー */
 }
 
-.form-group {
-    margin-bottom: 15px;
+form {
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #666666; /* ラベル：淡いグレー */
 }
 
 input, select, button {
     width: 100%;
     padding: 10px;
-    border: none;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc; /* 入力欄：淡いグレー */
     border-radius: 4px;
-    background: #333;
-    color: #ffffff;
+    font-size: 16px;
+    background-color: #f9f9f9; /* 入力背景：ほぼ白 */
+    color: #333333; /* 入力文字：濃い灰色 */
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: #888888; /* フォーカス時：中間グレー */
 }
 
 button {
+    background-color: #e0e0e0; /* ボタン：薄い灰色 */
+    color: #333333; /* ボタン文字：濃い灰色 */
     cursor: pointer;
-    background: #00e676;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background: #00c853;
-}
-
-#macro-preview {
-    margin-top: 20px;
+    background-color: #d6d6d6; /* ホバー時：少し濃い灰色 */
 }
 
 pre {
-    background: #212121;
+    background: #f4f4f4; /* プレビュー背景：淡いグレー */
     padding: 10px;
+    border: 1px solid #dddddd; /* プレビュー枠線：薄いグレー */
     border-radius: 4px;
     overflow-x: auto;
+    color: #444444; /* プレビュー文字：落ち着いた灰色 */
 }
